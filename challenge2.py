@@ -23,19 +23,23 @@ In the second iteration, we can see that lcm = 36 and is now perfectly divisible
 # All work should be done in this method, the header is provided for you.
 # Reminder: "a" and "b" from the method are variables you can access in the code.
 def lcm(a, b):
-    print("holding place")
-
-
-
-
-
-
+    if (int(a) * int(b) == 0):
+        print("lcm(" + str(a) + ", " + str(b) + ") = 0")
+    else:
+        Num1 = abs(int(a))
+        Num2 = abs(int(b))
+        lcm = max(Num1,Num2)
+        Oth = min(Num1,Num2)
+        real_lcm = lcm
+        while (real_lcm/Oth > int(real_lcm/Oth)):
+            real_lcm += lcm
+        print("lcm(" + str(a) + ", " + str(b) + ") = " + str(real_lcm))
 
 
 
 
 ###############################################################################
 # Do all work above here.  Lines below are to help test the program.
-print("LCM of 12 and 48: " + lcm(12, 48))
-print("LCM of 100 and 3: " + lcm(100, 3))
-print("LCM of -8 and 14: " + lcm(-8, 14))
+lcm(12, 48)
+lcm(100, 3)
+lcm(-8, 14)

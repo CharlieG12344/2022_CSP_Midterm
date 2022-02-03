@@ -7,3 +7,29 @@ Each parallel line should be a randomly selected color and randomly selected len
 
 Don't forget your imports!!!
 '''
+
+import turtle as trtl
+import random as rand
+painter = trtl.Turtle()
+painter.hideturtle()
+colors = ["red", "blue", "green", "yellow", "black", "gray", "purple", "pink", "magenta", "teal"]
+
+def lines(painter):
+    y = 100
+    x = 0
+    while x <= 9:
+        choice = rand.choice(colors)
+        length = rand.randint(0, 750)
+        painter.penup()
+        painter.goto(-300,y)
+        painter.pencolor(choice)
+        painter.pendown()
+        painter.forward(length)
+        y -= 10
+        x += 1
+
+lines(painter)
+
+
+wn = trtl.Screen()
+wn.mainloop()
